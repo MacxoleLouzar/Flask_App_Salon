@@ -1,10 +1,6 @@
-from pymongo import MongoClient
+from flask_pymongo import PyMongo
 
+mongo = PyMongo()
 
-class Database:
-    def __init__(self):
-        self.client = MongoClient('mongodb://localhost:27017')
-        self.db = self.client['SalonDB']
-        
-    def get_users_collection(self):
-        return self.db['users']
+def init_db(app):
+    mongo.init_app(app)
