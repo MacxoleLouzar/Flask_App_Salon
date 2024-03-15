@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Salon</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='salon_css/ViewSalon.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Salon Details</h1>
+      <img
+        src="{{ url_for('static', filename=salon.salon_logo) }}"
+        alt="Salon Logo"
+        class="logo"
+      />
+      <div class="details">
+        <p><strong>Owner Name:</strong> {{ salon.owner_name }}</p>
+        <p><strong>Salon Name:</strong> {{ salon.salon_name }}</p>
+        <p><strong>Address:</strong> {{ salon.address }}</p>
+        <p><strong>Phone Number:</strong> {{ salon.phone_number }}</p>
+        <p><strong>Description:</strong> {{ salon.salon_description }}</p>
+      </div>
+    </div>
+  </body>
+</html>
